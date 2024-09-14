@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contador de Cliques</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+<click-counter></click-counter>
+</div>
+ 
+<script>
+Vue.component('click-counter', {
+template: `
+<div>
+<p>Contador: {{ contador }}</p>
+<button @click="incrementar">Clique aqui</button>
+</div>
+`,
+data() {
+return {
+contador: 0
+};
+},
+methods: {
+incrementar() {
+this.contador += 1;
+}
+}
+});
+ 
+new Vue({
+el: '#app'
+});
+</script>
+</body>
+</html>
+ 
+ 

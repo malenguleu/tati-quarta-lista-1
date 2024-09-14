@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lista de Itens com v-for</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+ 
+<div id="app">
+<item-list></item-list>
+</div>
+ 
+<script>
+Vue.component('item-list', {
+template: `
+<div>
+<ul>
+<li v-for="(item, index) in itens" :key="index">{{ item }}</li>
+</ul>
+</div>
+`,
+data() {
+return {
+itens: [
+'Rímel',
+'Blush',
+'Sombra',
+'Batom',
+'Delineador'
+]
+};
+}
+});
+ 
+new Vue({
+el: '#app'
+});
+</script>
+</body>
+</html>
+ 

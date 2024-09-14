@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mostrar/Ocultar Texto</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+<show-hide-text></show-hide-text>
+</div>
+<script>
+Vue.component('show-hide-text', {
+template: `
+<div>
+<button @click="toggleMostrar">{{ mostrar ? 'Ocultar Texto' : 'Mostrar Texto' }}</button>
+<p v-if="mostrar">Oi Tati.</p>
+</div>
+`,
+data() {
+return {
+mostrar: false
+};
+},
+methods: {
+toggleMostrar() {
+this.mostrar = !this.mostrar;
+}
+}
+});
+ 
+new Vue({
+el: '#app'
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Entrada de Texto com v-model</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+<text-input></text-input>
+</div>
+ 
+<script>
+Vue.component('text-input', {
+template: `
+<div>
+<input type="text" v-model="nome" placeholder="Digite seu nome">
+<p>Nome digitado: {{ nome }}</p>
+</div>
+`,
+data() {
+return {
+nome: ''
+};
+}
+});
+ 
+new Vue({
+el: '#app'
+});
+</script>
+</body>
+</html>
+ 

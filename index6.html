@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alterar Estilo com Scoped CSS</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+ 
+<div id="app">
+<styled-text></styled-text>
+</div>
+ 
+ 
+<script>
+Vue.component('styled-text', {
+template: `
+<div>
+<p>Texto</p>
+</div>
+`,
+ 
+ 
+style: `
+<style scoped>
+p {
+color: green;
+}
+</style>
+`
+});
+ 
+ 
+new Vue({
+el: '#app'
+});
+</script>
+</body>
+</html>
+tem menu de contexto
